@@ -1,0 +1,2 @@
+class PostStylesController < ApplicationController
+end

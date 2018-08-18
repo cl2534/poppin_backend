@@ -1,0 +1,2 @@
+class PostStyle < ApplicationRecord
+end
