@@ -15,4 +15,46 @@ ActiveRecord::Schema.define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
+=======
+  create_table "post_styles", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "style_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_post_styles_on_post_id"
+    t.index ["style_id"], name: "index_post_styles_on_style_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.text "picture_url"
+    t.integer "likes"
+    t.string "location"
+    t.string "articles"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.string "name"
+    t.text "style_pic_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.text "profile_img_link"
+    t.string "address"
+    t.string "about_me"
+    t.string "facebook_url"
+    t.string "instagram_username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+>>>>>>> refs/remotes/origin/master
 end

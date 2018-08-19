@@ -5,7 +5,7 @@ class Api::V1::PostsController < ApplicationController
     render json: { posts: Post.all}
   end
 
-  def new
+  def new 
     @post = Post.create
   end
   # def create
