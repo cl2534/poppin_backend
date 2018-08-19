@@ -43,6 +43,6 @@ class Api::V1::PostStylesController < ApplicationController
   end
 
   def find_poststyle
-    @poststyle = PostStyleStyle.find(params[:id])
+    @poststyle = PostStyle.find(params[:id])
   end
 end
