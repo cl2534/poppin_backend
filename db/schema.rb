@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 2018_08_17_203846) do
   create_table "posts", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id"
+    t.text "picture_url"
+    t.integer "likes"
+    t.string "location"
+    t.string "articles"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -42,6 +46,10 @@ ActiveRecord::Schema.define(version: 2018_08_17_203846) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.text "profile_img_link"
+    t.string "address"
+    t.string "about_me"
+    t.string "facebook_url"
+    t.string "instagram_username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -5,10 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-mike = User.create(name: 'Mike', profile_img_link: "12")
-isaac = User.create(name: 'Isaac', profile_img_link: "12")
-chang = User.create(name: 'Chang', profile_img_link: "12")
-jee = User.create(name: 'Jee', profile_img_link: "12")
+mike = User.create(name: 'Mike', profile_img_link: "https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/22046395_10214082670042204_4480383363565173225_n.jpg?_nc_cat=0&oh=a390cefc7f4e1f72ebc524602879f821&oe=5C05D1B0", address:"New York, NY", about_me:"Student from NYC", facebook_url: "", instagram_username: "")
+isaac = User.create(name: 'Isaac', profile_img_link: "https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/13177_10205939356419956_3564251313423652402_n.jpg?_nc_cat=0&oh=eee217987fcb617e8fcf1205dd7457ee&oe=5C01B184", address:"New York, NY", about_me:"Student from NYC", facebook_url: "facebook.com/ButterFanClub", instagram_username: "pinnacleboys")
+chang = User.create(name: 'Chang', profile_img_link: "https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/379894_2451639688280_1117897982_n.jpg?_nc_cat=0&oh=1a3e8fa7c045fa294318760141ff999b&oe=5C389347", address:"Brooklyn, NY", about_me:"NYU and Flatiron Student", facebook_url: "facebook.com/ChxngM!n", instagram_username: "im_chorong")
+jee = User.create(name: 'Jee', profile_img_link: "https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/429446_4791197625374_507971728_n.jpg?_nc_cat=0&oh=405ddf3031fed0ed3105be2d403b74ed&oe=5C05CB74", address: "Boston, MA", about_me:"Class Prankster, Kurt's rival.", facebook_url:"facebook.com/ITZjee", instagram_username:"eeeeeo")
+kurt = User.create(name: 'Kurt', profile_img_link: "https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-1/12549059_1127419003936766_4388258233688797749_n.jpg?_nc_cat=0&oh=386ff3d46374f1a07d2de873b42f7b7f&oe=5BFBF505", address: "Brooklyn, NY", about_me:"Class Prankster, Jee's rival.", facebook_url:"facebook.com/hellomynameisskrtbauer", instagram_username:"")
 
 jeans = Style.create(name: 'Jeans', style_pic_link: "http://www.joesjeans.com/Media/JOES/homepage/premium-womens-denim-and-jeans.jpg")
 shirts = Style.create(name: 'Shirts', style_pic_link: "https://www.braiconf.ro/uploads/products/2018W04/0250-camasa-cu-aplicatii-pe-piept0697251054ic70xaqq8-gallery-1-2000x3000.jpg")
@@ -31,8 +32,9 @@ hawaiian_shirt = Style.create(name: 'Hawaiian Shirt', style_pic_link: "https://w
 
 post_style1 = PostStyle.create(post_id: 1, style_id: 2)
 post_style2 = PostStyle.create(post_id: 1, style_id: 3)
-post1 = Post.create(name: 'Summer Outfit', user_id: 1)
-post2 = Post.create(name: 'Winter Outfit', user_id: 1)
-post3 = Post.create(name: 'My Outfit', user_id: 1)
-post4 = Post.create(name: 'Spring Outfit', user_id: 1)
-post5 = Post.create(name: 'Fall Outfit', user_id: 1)
+
+post1 = Post.create(name: 'Summer Outfit', user_id: 1, picture_url: "http://s3cdn-test-lookbooknu.netdna-ssl.com/files/looks/medium/2018/08/18/5377270_image.jpg?1534583825", likes: 0, location: "Bogota", articles:"Big Pants, Small shoes")
+post2 = Post.create(name: 'Winter Outfit', user_id: 1, picture_url: "http://s3cdn-test-lookbooknu.netdna-ssl.com/files/looks/medium/2018/08/18/5377245_willascherrybomb-blogger-blog-lookbook-ootd-outfit-second-hand_(9).jpg?1534570988", likes: 2, location: "Reykjavik, Iceland", articles:"")
+post3 = Post.create(name: 'My Outfit', user_id: 2, picture_url: "http://s3cdn-test-lookbooknu.netdna-ssl.com/files/looks/medium/2018/08/19/5377474_DSC_6926.jpg?1534667150", likes: 10, location: "My Crib", articles:"Raf Simons, Rick Owens")
+post4 = Post.create(name: 'Spring Outfit', user_id: 3, picture_url: "http://s3cdn-test-lookbooknu.netdna-ssl.com/files/looks/medium/2018/08/19/5377532_image.jpg?1534684001", likes: 900000, location: "Area 51", articles: "Gucci Sunglasses, Gucci Flipflops, Gucci Underwear")
+post5 = Post.create(name: 'Fall Outfit', user_id: 1, picture_url: "http://s3cdn-test-lookbooknu.netdna-ssl.com/files/looks/medium/2018/08/16/5376925_image.jpg?1534449637", likes: 2, location: "Atlantis, Pacific Ocean", articles:"Maroon knitted polo")
