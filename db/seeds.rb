@@ -29,9 +29,18 @@ preppy = Style.create(name: 'Prepster', style_pic_link: "https://i.pinimg.com/or
 skater = Style.create(name: 'Skater', style_pic_link: "https://i.pinimg.com/originals/0e/11/7f/0e117f44e11e0699a4a96d5d535f52dc.jpg")
 hawaiian_shirt = Style.create(name: 'Hawaiian Shirt', style_pic_link: "https://www.thinkgeek.com/images/products/zoom/kopo_jurassic_hawaiian_shirt.jpg")
 
-
 post_style1 = PostStyle.create(post_id: 1, style_id: 2)
-post_style2 = PostStyle.create(post_id: 1, style_id: 3)
+post_style2 = PostStyle.create(post_id: 2, style_id: 3)
+post_style3 = PostStyle.create(post_id: 3, style_id: 1)
+post_style4 = PostStyle.create(post_id: 1, style_id: 1)
+post_style5 = PostStyle.create(post_id: 2, style_id: 2)
+post_style6 = PostStyle.create(post_id: 3, style_id: 3)
+post_style7 = PostStyle.create(post_id: 4, style_id: 3)
+post_style8 = PostStyle.create(post_id: 5, style_id: 2)
+post_style9 = PostStyle.create(post_id: 1, style_id: 1)
+post_style10 = PostStyle.create(post_id: 1, style_id: 4)
+post_style11 = PostStyle.create(post_id: 2, style_id: 5)
+post_style12 = PostStyle.create(post_id: 3, style_id: 1)
 
 post1 = Post.create(name: 'Summer Outfit', user_id: 1, picture_url: "http://s3cdn-test-lookbooknu.netdna-ssl.com/files/looks/medium/2018/08/18/5377270_image.jpg?1534583825", likes: 0, location: "Bogota", articles:"Big Pants, Small shoes")
 post2 = Post.create(name: 'Winter Outfit', user_id: 1, picture_url: "http://s3cdn-test-lookbooknu.netdna-ssl.com/files/looks/medium/2018/08/18/5377245_willascherrybomb-blogger-blog-lookbook-ootd-outfit-second-hand_(9).jpg?1534570988", likes: 2, location: "Reykjavik, Iceland", articles:"")
