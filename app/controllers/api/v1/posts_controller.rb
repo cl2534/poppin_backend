@@ -5,7 +5,7 @@ class Api::V1::PostsController < ApplicationController
     render json: { posts: Post.all}
   end
 
-  def new
+  def new 
     @post = Post.create
   end
   # def create
@@ -39,12 +39,10 @@ class Api::V1::PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:name, :post_pic_link)
+    params.permit(:name, :user_id)
   end
 
   def find_post
     @post = Post.find(params[:id])
   end
-
-
 end
