@@ -1,24 +1,18 @@
 class Api::V1::PostsController < ApplicationController
-  # before_action :find_post, only: [:update]
+  before_action :find_post, only: [:show, :update, :destroy]
   def index
     @posts = Post.all
-    render json: { posts: Post.all}
+    # render :json => @posts.to_json(:include => :styles)
+    render json: { posts: Post.all }
   end
 
-  def new 
+  def new
     @post = Post.create
   end
-  # def create
-  #    @post = current_post.posts.build(post_params)
-  #    if @post.save
-  #      render json: { post: @post, comments: @post.comments }, methods: :comment_ids, status: :created, location: @post
-  #    else
-  #      render json: @post.errors, status: :unprocessable_entity
-  #    end
-  #  end
+
   def show
-    @post = Post.find(params[:id])
-    render json: { post: @post}
+    # @post = Post.find(params[:id])
+    render :json => post.to_json(:include => :style)
   end
 
   def create
@@ -27,7 +21,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
     @post.update(post_params)
     if @post.save
       render json: @post, status: :accepted
@@ -35,6 +29,13 @@ class Api::V1::PostsController < ApplicationController
       render json: { errors: @post.errors.full_messages }, status: :unprocessible_entity
     end
   end
+
+  def destroy
+    # @post = post.find(params[:id])
+    @post.destroy
+    render json: @post, status: :accepted
+  end
+
 
   private
 

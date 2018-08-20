@@ -1,5 +1,5 @@
 class Api::V1::StylesController < ApplicationController
-  # before_action :find_style, only: [:update]
+  before_action :find_style, only: [:show, :update, :destroy]
   def index
     @styles = Style.all
     render json: { styles: Style.all}
@@ -8,16 +8,9 @@ class Api::V1::StylesController < ApplicationController
   def new
     @style = Style.create
   end
-  # def create
-  #    @post = current_style.posts.build(post_params)
-  #    if @post.save
-  #      render json: { post: @post, comments: @post.comments }, methods: :comment_ids, status: :created, location: @post
-  #    else
-  #      render json: @post.errors, status: :unprocessable_entity
-  #    end
-  #  end
+
   def show
-    @style = Style.find(params[:id])
+    # @style = Style.find(params[:id])
     render json: { style: @style}
   end
 
@@ -27,13 +20,19 @@ class Api::V1::StylesController < ApplicationController
   end
 
   def update
-    @style = Style.find(params[:id])
+    # @style = Style.find(params[:id])
     @style.update(style_params)
     if @style.save
       render json: @style, status: :accepted
     else
       render json: { errors: @style.errors.full_messages }, status: :unprocessible_entity
     end
+  end
+
+  def destroy
+    # @post = post.find(params[:id])
+    @style.destroy
+    render json: @style, status: :accepted
   end
 
   private
