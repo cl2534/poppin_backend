@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  # before_action :find_user, only: [:update]
+  before_action :find_user, only: [:show, :destroy, :update]
   def index
     @users = User.all
     render json: { users: User.all}
@@ -8,16 +8,9 @@ class Api::V1::UsersController < ApplicationController
   def new
     @user = User.create
   end
-  # def create
-  #    @post = current_user.posts.build(post_params)
-  #    if @post.save
-  #      render json: { post: @post, comments: @post.comments }, methods: :comment_ids, status: :created, location: @post
-  #    else
-  #      render json: @post.errors, status: :unprocessable_entity
-  #    end
-  #  end
+
   def show
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
     render json: { user: @user}
   end
 
@@ -27,13 +20,19 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
     @user.update(user_params)
     if @user.save
       render json: @user, status: :accepted
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessible_entity
     end
+  end
+
+  def destroy
+    # @post = post.find(params[:id])
+    @user.destroy
+    render json: @user, status: :accepted
   end
 
   private

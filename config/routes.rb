@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :users
       resources :styles
       resources :posts
+      resources :post_styles
     end
   end
 end

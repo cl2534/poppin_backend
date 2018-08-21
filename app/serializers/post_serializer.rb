@@ -1,6 +1,6 @@
 class PostSerializer < ActiveModel::Serializer
-  attributes :id, :name
-  has_many :post_styles
+  # attributes :id, :name, :picture_url, :likes, :location, :articles
+  has_many :post_styles, embed: :objects
   has_many :styles, through: :post_styles
   belongs_to :user
 end
