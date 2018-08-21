@@ -1,8 +1,11 @@
 class Api::V1::StylesController < ApplicationController
-  before_action :find_style, only: [:show, :update, :destroy]
+  before_action :find_style, only: [:update, :destroy]
+
+
+
   def index
-    @styles = Style.all
-    render json: { styles: Style.all}
+    styles = Style.all.includes(:posts).find_by id: params[:id]
+    render json: { styles: Style.all}, include: ['posts']
   end
 
   def new
@@ -11,7 +14,8 @@ class Api::V1::StylesController < ApplicationController
 
   def show
     # @style = Style.find(params[:id])
-    render json: { style: @style}
+    style = Style.includes(:posts).find_by id: params[:id]
+    render json: style
   end
 
   def create

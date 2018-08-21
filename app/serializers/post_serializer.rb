@@ -3,4 +3,8 @@ class PostSerializer < ActiveModel::Serializer
   has_many :post_styles, embed: :objects
   has_many :styles, through: :post_styles
   belongs_to :user
+  
+  def include_tags?
+    object.association(:styles).loaded?
+  end
 end

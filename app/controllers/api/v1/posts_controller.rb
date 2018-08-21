@@ -1,9 +1,9 @@
 class Api::V1::PostsController < ApplicationController
-  before_action :find_post, only: [:show, :update, :destroy]
+  before_action :find_post, only: [:update, :destroy]
+
   def index
-    @posts = Post.all
-    # render :json => @posts.to_json(:include => :styles)
-    render json: { posts: Post.all }
+    posts = Post.all.includes(:styles).find_by id: params[:id]
+    render json: { posts: Post.all }, include:  ['styles']
   end
 
   def new
@@ -11,8 +11,9 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def show
+    post = Post.includes(:styles).find_by id: params[:id]
     # @post = Post.find(params[:id])
-    render :json => post.to_json(:include => :style)
+    render json: post
   end
 
   def create
