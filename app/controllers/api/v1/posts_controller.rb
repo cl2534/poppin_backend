@@ -5,7 +5,7 @@ class Api::V1::PostsController < ApplicationController
     render json: { posts: Post.all}
   end
 
-  def new 
+  def new
     @post = Post.create
   end
   # def create
@@ -32,14 +32,14 @@ class Api::V1::PostsController < ApplicationController
     if @post.save
       render json: @post, status: :accepted
     else
-      render json: { errors: @post.errors.full_messages }, status: :unprocessible_entity
+      render json: { errors: @post.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   private
 
   def post_params
-    params.permit(:name, :user_id)
+    params.permit(:name, :user_id, :picture_url, :likes, :location, :articles)
   end
 
   def find_post
